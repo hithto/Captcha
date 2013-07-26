@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Alphea Demo";
+}
+
+@using MvcCaptcha
+@using System.Drawing
+
+<h2>Submit your comment</h2>
+
+@using (Html.BeginForm())
+{
+  @Html.ValidationSummary()
+  
+  <p>
+    <input type="email" name="name" />
+  </p>
+  <p>
+    <input type="text" name="email" />
+  </p>
+  <p>
+    @Html.MvcCaptcha()
+  </p>
+  <p>
+    <input type="submit" value="Submit" />
+  </p>
+}
