@@ -13,7 +13,8 @@ namespace MvcCaptcha
     {
         public static MvcHtmlString MvcCaptcha(this HtmlHelper helper)
         {
-            return MvcCaptcha(helper, Color.FromArgb(220, 223, 226), Color.FromArgb(234, 237, 239));
+            //Color.FromArgb(234, 237, 239)
+            return MvcCaptcha(helper, Color.Transparent, Color.Transparent);
         }
 
         public static MvcHtmlString MvcCaptcha(this HtmlHelper helper, Color color1, Color color2)
@@ -28,7 +29,7 @@ namespace MvcCaptcha
                 using (var g = Graphics.FromImage(bmp))
                 {
                     DrawRoundedRectangle(g, color1, color1, color2, 0, 0, 60, 180, 3);
-                    g.DrawString("您是人類？", new Font("Arial", 8), new SolidBrush(Color.DimGray), 2, 2);
+                    //g.DrawString("您是人類？", new Font("Arial", 8), new SolidBrush(Color.DimGray), 2, 2);
                     g.DrawString(String.Format("{0} + {1} =", num1, num2), new Font("Courier", 16), new SolidBrush(Color.Black), 15, 20);
 
                     var memStream = new MemoryStream();
