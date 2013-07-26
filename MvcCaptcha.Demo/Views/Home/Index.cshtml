@@ -5,20 +5,20 @@
 @using MvcCaptcha
 @using System.Drawing
 
-<h2>Submit your comment</h2>
+<h2>Alphea Captcha</h2>
 
 @using (Html.BeginForm())
 {
   @Html.ValidationSummary()
   
   <p>
-    <input type="email" name="name" />
+    Email : <input type="email" name="email" />
   </p>
   <p>
-    <input type="text" name="email" />
+    password: <input type="password" name="password" />
   </p>
   <p>
-    @Html.MvcCaptcha()
+   &nbsp @Html.MvcCaptcha()
   </p>
   <p>
     <input type="submit" value="Submit" />
